@@ -2,6 +2,8 @@ package com.cydeo.stepdefinitions;
 
 import com.cydeo.pages.HomePage;
 import com.cydeo.pages.LoginPage;
+import com.cydeo.utilities.ConfigurationReader;
+import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,6 +16,7 @@ public class LogoutWithProfile_1_2_StepDef {
     HomePage homePage = new HomePage();
     @Given("The user is on the homepage")
     public void the_user_is_on_the_homepage() {
+        Driver.get().get(ConfigurationReader.get("url"));
 
         loginPage.loginAsDriver();
     }
