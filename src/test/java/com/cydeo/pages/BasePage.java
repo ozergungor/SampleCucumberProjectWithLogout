@@ -15,11 +15,9 @@ public abstract class BasePage {
 	BasePage() {
 		PageFactory.initElements(Driver.get(), this);
 	}
-
 	@FindBy(css = "div[class='loader-mask shown']")
 	@CacheLookup
 	protected WebElement loaderMask;
-
 	/**
 	 * Waits until loader screen present. If loader screen will not pop up at all,
 	 * NoSuchElementException will be handled  bu try/catch block
@@ -33,15 +31,11 @@ public abstract class BasePage {
 			e.printStackTrace();
 		}
 	}
-
 	//returns the title of the page
 	public String getPageTitle(){
 		BrowserUtils.wait(3);
 		return Driver.get().getTitle();
 	}
-
-
-
 	//navigate to any given module and subModule
 	public void navigateToModule(String moduleName, String subModuleName) { //Fleet - Vehicles
 		BrowserUtils.wait(1);
@@ -52,8 +46,6 @@ public abstract class BasePage {
 		WebElement subModule = Driver.get().findElement(By.xpath("//span[text()[normalize-space() = '" + subModuleName + "']]"));
 		subModule.click();
 	}
-
-
 	//navigate to any given module and subModule and subModule of subModule
 	public void navigateToModule(String moduleName, String subModuleName, String subSubModuleName) {
 		BrowserUtils.wait(1);
@@ -68,7 +60,4 @@ public abstract class BasePage {
 		WebElement subSubModule = Driver.get().findElement(By.xpath("//span[text()[normalize-space() = '" + subSubModuleName + "']]"));
 		subSubModule.click();
 	}
-
-
-
 }

@@ -11,11 +11,8 @@ public class HomePage {
 
         PageFactory.initElements(Driver.get(), this);
     }
-
-
     @FindBy(xpath = "//a[@href='javascript: void(0);']")
     public WebElement userProfileName;
-
     @FindBy(className = "oro-subtitle")
     private WebElement pageSubtitle;
 
